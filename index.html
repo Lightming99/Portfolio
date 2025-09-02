@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmol Sharma - Software Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-logo">AS</div>
+            <div class="loader-text">Loading Portfolio<span class="loading-dots"></span></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <span class="logo-text">AS</span>
+                    <div class="logo-animation">
+                        <div class="logo-circle"></div>
+                        <div class="logo-pulse"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="#contact-form" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-content" id="pageContent">
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge bounce-in">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Software Engineer</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="title-main typewriter">Hi, I'm Anmol Sharma</span>
+                        <span class="title-sub text-shimmer">Building AI-Powered Solutions</span>
+                    </h1>
+                    
+                    <p class="hero-description slide-reveal">
+                        Computer Science graduate with hands-on experience in building <span class="highlight glow-effect">AI chatbots</span>, 
+                        software systems, websites, and mobile apps. Skilled in cloud computing and process automation, 
+                        integrating diverse technologies to enhance efficiency. <span class="highlight pulse-animation">Certified by Meta, Google, and Johns Hopkins University.</span>
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item stagger-animation enhanced-hover">
+                            <div class="stat-number">8.2</div>
+                            <div class="stat-label">CGPA</div>
+                        </div>
+                        <div class="stat-item stagger-animation enhanced-hover">
+                            <div class="stat-number">2+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item stagger-animation enhanced-hover">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Major Projects</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <a href="projects.html" class="btn btn-primary btn-large enhanced-hover">
+                            <span>View My Work</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="contact.html" class="btn btn-secondary btn-large enhanced-hover">
+                            <span>Let's Connect</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/Lightming99" class="social-link" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/anmol-sharma-69b9a5236" class="social-link" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/9882793077" class="social-link" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="profile-container">
+                        <div class="profile-frame">
+                            <div class="profile-image">
+                                <div class="profile-placeholder">AS</div>
+                            </div>
+                        </div>
+                        <div class="profile-badges">
+                            <div class="floating-badge badge-1">AI Researcher</div>
+                            <div class="floating-badge badge-2">Software Engineer</div>
+                            <div class="floating-badge badge-3">Chatbot Expert</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="section" id="featured-projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title bounce-in">Featured Projects</h2>
+                <p class="section-subtitle slide-reveal">Showcasing innovation through clean code and thoughtful design</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card enhanced-card gradient-border morph-bg">
+                    <div class="gradient-border-content">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>EcoSentinel</h3>
+                        <p>Environmental chatbot backend using Rasa, Neo4j, and SPARQL. Integrated AQICN and Gemini APIs for air/water data with real-time reporting. (University of Murcia Research Project)</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Rasa</span>
+                            <span class="tech-tag">Neo4j</span>
+                            <span class="tech-tag">SPARQL</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Lightming99/Ecosentinel" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>View on GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="project-card enhanced-card">
+                    <div class="project-image">
+                        <div class="project-icon pulse-animation">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>MetaConverse</h3>
+                        <p>LLM-Enhanced conversational AI chatbot using Rasa framework with NLP capabilities, chat history tracking, and automated model training workflows.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Rasa</span>
+                            <span class="tech-tag">LLMs</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Lightming99/RaSa_Metaconverse" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>View on GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AstroSatvik</h3>
+                        <p>Live astrology consultation website with responsive design, WhatsApp integration for client communication, and consultation booking system.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">WhatsApp API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://astrosatvik.com" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Visit Live Site</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card enhanced-card">
+                    <div class="project-image">
+                        <div class="project-icon glow-effect">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AgriSense</h3>
+                        <p>AgroSol AgriSense: Smart agriculture solution leveraging IoT sensors, data analytics, and machine learning for precision farming and crop monitoring.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Data Analytics</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Lightming99/AgroSol-agrisense" target="_blank" class="project-link enhanced-hover">
+                                <i class="fab fa-github"></i>
+                                <span>View on GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-footer">
+                <a href="projects.html" class="btn btn-primary btn-large enhanced-hover pulse-animation">
+                    <span>View All Projects</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">Mastering the technologies that power modern web development</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI & Machine Learning</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <div class="skill-tag">Rasa</div>
+                        <div class="skill-tag">LLMs</div>
+                        <div class="skill-tag">NLP</div>
+                        <div class="skill-tag">Neo4j</div>
+                        <div class="skill-tag">SPARQL</div>
+                        <div class="skill-tag">Knowledge Graphs</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Programming & Development</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <div class="skill-tag">Python</div>
+                        <div class="skill-tag">JavaScript</div>
+                        <div class="skill-tag">HTML/CSS</div>
+                        <div class="skill-tag">Flask</div>
+                        <div class="skill-tag">DBMS</div>
+                        <div class="skill-tag">Data Structures</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud & Security</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <div class="skill-tag">Google Cloud</div>
+                        <div class="skill-tag">Azure</div>
+                        <div class="skill-tag">Cybersecurity</div>
+                        <div class="skill-tag">Wireshark</div>
+                        <div class="skill-tag">Network Analysis</div>
+                        <div class="skill-tag">Process Automation</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-footer">
+                <a href="about.html" class="btn btn-outline btn-large">
+                    <span>Learn More About Me</span>
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Journey</h2>
+                <p class="section-subtitle">Key milestones in my development career</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content">
+                        <h3>AI Researcher</h3>
+                        <h4>University of Murcia, Spain</h4>
+                        <p>Working with Knowledge graphs like Graph DB and Neo4j for advanced query retrieval. Flask to create communication channels between Frontend and Graphs. RASA community version integrated with LLMs.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content">
+                        <h3>IVR Developer</h3>
+                        <h4>Digitide, Mohali</h4>
+                        <p>Managed centralized remote applications and optimized customer response systems. Conducted comprehensive IVR testing and call flow designing using Genesis.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Intern</h3>
+                        <h4>CDAC, Noida</h4>
+                        <p>Performed network traffic analysis using Wireshark. Examined network flows to identify potential security breaches and local troubleshooting using management tools.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-footer">
+                <a href="about.html" class="btn btn-outline btn-large">
+                    <span>View Complete Journey</span>
+                    <i class="fas fa-route"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta" id="contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Let's Create Something Exceptional</h2>
+                <p class="cta-description">
+                    Ready to bring your vision to life? I'm here to help you build outstanding web experiences 
+                    that engage users and deliver results. Let's discuss your project and turn your ideas into reality.
+                </p>
+                
+                <div class="cta-actions">
+                    <a href="#contact-form" class="btn btn-primary btn-large">
+                        <span>Start Your Project</span>
+                        <i class="fas fa-rocket"></i>
+                    </a>
+                    <a href="mailto:as21212022@gmail.com" class="btn btn-outline btn-large">
+                        <span>Send Email</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>as21212022@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 9882793077</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Shimla, India</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="section bg-gray-50">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to collaborate? Fill out the form below and I'll get back to you soon!
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-xl p-8 contact-form-container">
+                    <div class="contact-form-header">
+                        <h3>Send me a message</h3>
+                        <p>Fill out the form below and I'll get back to you soon!</p>
+                    </div>
+                    
+                    <form action="https://docs.google.com/forms/d/e/1FAIpQLScwx60_MnS9Kwko3Sz7iIoZiIuxXmPdSbD8cOOefLCSkKl5sw/formResponse" 
+                          method="POST" 
+                          target="_blank" 
+                          class="contact-form-fields">
+                        
+                        <div class="form-group">
+                            <label for="contact-name" class="form-label">
+                                <i class="fas fa-user"></i>
+                                Name
+                            </label>
+                            <input type="text" 
+                                   id="contact-name" 
+                                   name="entry.1877115667" 
+                                   class="form-input" 
+                                   placeholder="Your full name"
+                                   required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email" class="form-label">
+                                <i class="fas fa-envelope"></i>
+                                Email ID
+                            </label>
+                            <input type="email" 
+                                   id="contact-email" 
+                                   name="entry.1045781291" 
+                                   class="form-input" 
+                                   placeholder="your.email@example.com"
+                                   required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-subject" class="form-label">
+                                <i class="fas fa-tag"></i>
+                                Subject
+                            </label>
+                            <input type="text" 
+                                   id="contact-subject" 
+                                   name="entry.839337160" 
+                                   class="form-input" 
+                                   placeholder="Brief subject of your message"
+                                   required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-message" class="form-label">
+                                <i class="fas fa-comment"></i>
+                                Message
+                            </label>
+                            <textarea id="contact-message" 
+                                      name="entry.454445765" 
+                                      class="form-textarea" 
+                                      rows="4"
+                                      placeholder="Tell me about your project or inquiry..."
+                                      required></textarea>
+                        </div>
+                        
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary btn-large submit-btn">
+                                <span>Submit</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="direct-reachout-section">
+                    <div class="reachout-header">
+                        <h3 class="text-shimmer">Prefer Direct Contact?</h3>
+                        <p class="slide-reveal">Choose your preferred way to connect with me</p>
+                    </div>
+                    
+                    <div class="reachout-grid">
+                        <a href="mailto:as21212022@gmail.com" class="reachout-card email-card enhanced-hover stagger-animation">
+                            <div class="reachout-icon pulse-animation">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="reachout-content">
+                                <h4>Email Me</h4>
+                                <p>as21212022@gmail.com</p>
+                                <span class="reachout-badge glow-effect">Usually responds in 24h</span>
+                            </div>
+                            <div class="reachout-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                        
+                        <a href="tel:+919882793077" class="reachout-card phone-card enhanced-hover stagger-animation">
+                            <div class="reachout-icon glow-effect">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="reachout-content">
+                                <h4>Call Me</h4>
+                                <p>+91 9882793077</p>
+                                <span class="reachout-badge">Available 9 AM - 6 PM IST</span>
+                            </div>
+                            <div class="reachout-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                        
+                        <a href="https://wa.me/919882793077" target="_blank" class="reachout-card whatsapp-card enhanced-hover stagger-animation">
+                            <div class="reachout-icon pulse-animation">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="reachout-content">
+                                <h4>WhatsApp</h4>
+                                <p>Quick messaging</p>
+                                <span class="reachout-badge glow-effect">Instant responses</span>
+                            </div>
+                            <div class="reachout-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                        
+                        <div class="reachout-card location-card enhanced-hover stagger-animation morph-bg">
+                            <div class="reachout-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="reachout-content">
+                                <h4>Location</h4>
+                                <p>Shimla, India</p>
+                                <span class="reachout-badge">UTC +5:30</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-connect">
+                        <h4>Follow My Journey</h4>
+                        <div class="social-links-enhanced">
+                            <a href="https://github.com/Lightming99" target="_blank" class="social-link-enhanced github">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/anmol-sharma-69b9a5236/" target="_blank" class="social-link-enhanced linkedin">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Anmol Sharma</h3>
+                    <p>Software Engineer passionate about AI-powered solutions and building intelligent systems that make a meaningful impact.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/anmolanand08" class="social-link" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/anmol-anand-7b1a84256" class="social-link" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/9882793077" class="social-link" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Frontend Design</a></li>
+                        <li><a href="#">Backend Development</a></li>
+                        <li><a href="#">Technical Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> as21212022@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +91 9882793077</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Shimla, India</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anmol Sharma. All rights reserved.</p>
+                <p>Crafted with <i class="fas fa-heart"></i> and powered by innovation</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuToggle && navLinks) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                });
+                
+                // Close menu when clicking on a link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+                        navLinks.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Enhanced form submission handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.querySelector('.contact-form-fields');
+            const submitBtn = document.querySelector('.submit-btn');
+            
+            if (contactForm && submitBtn) {
+                contactForm.addEventListener('submit', function(e) {
+                    // Show loading state
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // Create success message element
+                    setTimeout(function() {
+                        // Reset button after submission
+                        submitBtn.innerHTML = '<span>Submit</span><i class="fas fa-paper-plane"></i>';
+                        submitBtn.disabled = false;
+                        
+                        // Show success message
+                        const successMsg = document.createElement('div');
+                        successMsg.className = 'form-success show';
+                        successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully! I\'ll get back to you soon.';
+                        contactForm.appendChild(successMsg);
+                        
+                        // Remove success message after 5 seconds
+                        setTimeout(function() {
+                            successMsg.remove();
+                        }, 5000);
+                        
+                        // Reset form
+                        contactForm.reset();
+                    }, 2000);
+                });
+            }
+        });
+
+        // Page Loader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('pageLoader').classList.add('hidden');
+                document.getElementById('pageContent').style.opacity = '1';
+            }, 1500);
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    </div> <!-- End Page Content -->
+</body>
+</html>

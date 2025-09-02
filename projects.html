@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Anmol Sharma</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Additional Projects Page Styles */
+        .projects-hero {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+        }
+        
+        .projects-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: 25px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition-base);
+            text-decoration: none;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .projects-grid-detailed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .project-card-detailed {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: var(--transition-base);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .project-card-detailed:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-blue);
+        }
+        
+        .project-image-detailed {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-icon-large {
+            font-size: 4rem;
+            color: var(--white);
+        }
+        
+        .project-content-detailed {
+            padding: 2rem;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .project-link-btn {
+            width: 36px;
+            height: 36px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: var(--transition-base);
+            text-decoration: none;
+        }
+        
+        .project-link-btn:hover {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .project-features {
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-features h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            padding: 0.25rem 0;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-emerald);
+            font-weight: bold;
+        }
+        
+        .project-tech-detailed {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-tag-detailed {
+            padding: 0.375rem 0.75rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        
+        .project-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 0.75rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        
+        .status-completed .status-dot {
+            background: var(--accent-emerald);
+        }
+        
+        .status-live .status-dot {
+            background: #22c55e;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .status-in-progress .status-dot {
+            background: var(--primary-blue);
+        }
+        
+        .status-planning .status-dot {
+            background: var(--accent-purple);
+        }
+        
+        @media (max-width: 768px) {
+            .projects-grid-detailed {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+            
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+            
+            .projects-hero {
+                padding: 6rem 0 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-logo">AS</div>
+            <div class="loader-text">Loading Projects<span class="loading-dots"></span></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <span class="logo-text">AS</span>
+                    <div class="logo-animation">
+                        <div class="logo-circle"></div>
+                        <div class="logo-pulse"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="projects.html" class="nav-link active">Projects</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-content" id="pageContent">
+                        <div class="logo-pulse"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="projects.html" class="nav-link active">Projects</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Hero -->
+    <section class="projects-hero">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">My Projects</h1>
+                <p class="section-subtitle">A collection of applications and solutions I've built using modern technologies and best practices</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Buttons -->
+    <section class="section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Applications</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="projects-grid-detailed">
+                <!-- EcoSentinel -->
+                <div class="project-card-detailed" data-category="ai research">
+                    <div class="project-image-detailed">
+                        <div class="project-icon-large">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <div class="project-header">
+                            <h3 class="project-title">EcoSentinel</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/Lightming99/Ecosentinel" class="project-link-btn" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <p class="project-description">
+                            Environmental chatbot backend using Rasa, Neo4j, and SPARQL. Integrated AQICN and Gemini APIs for air/water data with real-time reporting. University of Murcia Research Project focusing on conversational AI for environmental monitoring.
+                        </p>
+                        
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul class="features-list">
+                                <li>Rasa-powered conversational AI backend</li>
+                                <li>Neo4j knowledge graph integration</li>
+                                <li>SPARQL queries for environmental data</li>
+                                <li>AQICN API for air quality monitoring</li>
+                                <li>Gemini API for enhanced responses</li>
+                                <li>Real-time environmental data reporting</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-tech-detailed">
+                            <span class="tech-tag-detailed">Rasa</span>
+                            <span class="tech-tag-detailed">Neo4j</span>
+                            <span class="tech-tag-detailed">SPARQL</span>
+                            <span class="tech-tag-detailed">Python</span>
+                            <span class="tech-tag-detailed">AQICN API</span>
+                            <span class="tech-tag-detailed">Gemini API</span>
+                        </div>
+                        
+                        <div class="project-status status-completed">
+                            <div class="status-dot"></div>
+                            <span>Research Project</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- MetaConverse -->
+                <div class="project-card-detailed" data-category="ai chatbot">
+                    <div class="project-image-detailed">
+                        <div class="project-icon-large">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <div class="project-header">
+                            <h3 class="project-title">MetaConverse</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/Lightming99/RaSa_Metaconverse" class="project-link-btn" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <p class="project-description">
+                            LLM-Enhanced conversational AI chatbot using Rasa framework with NLP capabilities, chat history tracking, and automated model training workflows. Advanced AI-powered conversation system with modern NLP integration.
+                        </p>
+                        
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul class="features-list">
+                                <li>Rasa-powered conversational AI</li>
+                                <li>LLM integration for enhanced responses</li>
+                                <li>Advanced NLP processing capabilities</li>
+                                <li>Chat history tracking and analytics</li>
+                                <li>Automated model training workflows</li>
+                                <li>Context-aware conversations</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-tech-detailed">
+                            <span class="tech-tag-detailed">Rasa</span>
+                            <span class="tech-tag-detailed">LLMs</span>
+                            <span class="tech-tag-detailed">NLP</span>
+                            <span class="tech-tag-detailed">Python</span>
+                            <span class="tech-tag-detailed">Machine Learning</span>
+                            <span class="tech-tag-detailed">API Integration</span>
+                        </div>
+                        
+                        <div class="project-status status-completed">
+                            <div class="status-dot"></div>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AstroSatvik -->
+                <div class="project-card-detailed" data-category="web fullstack">
+                    <div class="project-image-detailed">
+                        <div class="project-icon-large">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <div class="project-header">
+                            <h3 class="project-title">AstroSatvik</h3>
+                            <div class="project-links">
+                                <a href="https://astrosatvik.com" class="project-link-btn" target="_blank" title="Live Website">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <p class="project-description">
+                            Live astrology consultation website with responsive design, WhatsApp integration for client communication, and consultation booking system. Professional astrology services platform currently serving clients.
+                        </p>
+                        
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul class="features-list">
+                                <li>Live consultation booking system</li>
+                                <li>WhatsApp integration for communication</li>
+                                <li>Responsive design for all devices</li>
+                                <li>Client management system</li>
+                                <li>Professional astrology services</li>
+                                <li>Real-time availability updates</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-tech-detailed">
+                            <span class="tech-tag-detailed">HTML</span>
+                            <span class="tech-tag-detailed">CSS</span>
+                            <span class="tech-tag-detailed">JavaScript</span>
+                            <span class="tech-tag-detailed">WhatsApp API</span>
+                            <span class="tech-tag-detailed">Responsive Design</span>
+                        </div>
+                        
+                        <div class="project-status status-live">
+                            <div class="status-dot"></div>
+                            <span>Live & Active</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AgriSense -->
+                <div class="project-card-detailed" data-category="iot agriculture">
+                    <div class="project-image-detailed">
+                        <div class="project-icon-large">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <div class="project-header">
+                            <h3 class="project-title">AgriSense</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/Lightming99/AgroSol-agrisense" class="project-link-btn" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <p class="project-description">
+                            AgroSol AgriSense: Smart agriculture solution leveraging IoT sensors, data analytics, and machine learning for precision farming and crop monitoring. Advanced agricultural technology for sustainable farming practices.
+                        </p>
+                        
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul class="features-list">
+                                <li>IoT sensor integration for crop monitoring</li>
+                                <li>Machine learning-based crop predictions</li>
+                                <li>Real-time soil and weather analysis</li>
+                                <li>Data analytics for yield optimization</li>
+                                <li>Precision farming recommendations</li>
+                                <li>Smart irrigation management</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-tech-detailed">
+                            <span class="tech-tag-detailed">IoT</span>
+                            <span class="tech-tag-detailed">Machine Learning</span>
+                            <span class="tech-tag-detailed">Data Analytics</span>
+                            <span class="tech-tag-detailed">Python</span>
+                            <span class="tech-tag-detailed">Sensors</span>
+                            <span class="tech-tag-detailed">Agriculture Tech</span>
+                        </div>
+                        
+                        <div class="project-status status-completed">
+                            <div class="status-dot"></div>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- E-Commerce Platform -->
+                <div class="project-card-detailed" data-category="web fullstack">
+                    <div class="project-image-detailed">
+                        <div class="project-icon-large">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <div class="project-header">
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/anmolanand08" class="project-link-btn" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link-btn" target="_blank" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <p class="project-description">
+                            A full-featured e-commerce platform with modern design, secure payment processing, and comprehensive admin panel. Built with scalability and performance in mind.
+                        </p>
+                        
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul class="features-list">
+                                <li>Product catalog with search and filters</li>
+                                <li>Shopping cart and checkout system</li>
+                                <li>Secure payment gateway integration</li>
+                                <li>User authentication and profiles</li>
+                                <li>Admin dashboard for management</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-tech-detailed">
+                            <span class="tech-tag-detailed">React.js</span>
+                            <span class="tech-tag-detailed">Node.js</span>
+                            <span class="tech-tag-detailed">MongoDB</span>
+                            <span class="tech-tag-detailed">Stripe API</span>
+                            <span class="tech-tag-detailed">Redux</span>
+                            <span class="tech-tag-detailed">JWT</span>
+                        </div>
+                        
+                        <div class="project-status status-in-progress">
+                            <div class="status-dot"></div>
+                            <span>In Progress</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Task Management App -->
+                <div class="project-card-detailed" data-category="web frontend">
+                    <div class="project-image-detailed">
+                        <div class="project-icon-large">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <div class="project-header">
+                            <h3 class="project-title">Task Management App</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/anmolanand08" class="project-link-btn" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link-btn" target="_blank" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <p class="project-description">
+                            A productivity-focused task management application with real-time collaboration features, smart notifications, and intuitive project organization tools.
+                        </p>
+                        
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul class="features-list">
+                                <li>Drag-and-drop task organization</li>
+                                <li>Real-time collaboration</li>
+                                <li>Smart notifications system</li>
+                                <li>Project timeline visualization</li>
+                                <li>Team member management</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-tech-detailed">
+                            <span class="tech-tag-detailed">Vue.js</span>
+                            <span class="tech-tag-detailed">Socket.io</span>
+                            <span class="tech-tag-detailed">Express.js</span>
+                            <span class="tech-tag-detailed">MySQL</span>
+                            <span class="tech-tag-detailed">Vuex</span>
+                            <span class="tech-tag-detailed">WebSocket</span>
+                        </div>
+                        
+                        <div class="project-status status-completed">
+                            <div class="status-dot"></div>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Weather Dashboard -->
+                <div class="project-card-detailed" data-category="web frontend">
+                    <div class="project-image-detailed">
+                        <div class="project-icon-large">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <div class="project-header">
+                            <h3 class="project-title">Weather Dashboard</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/anmolanand08" class="project-link-btn" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link-btn" target="_blank" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <p class="project-description">
+                            A beautiful and responsive weather dashboard that provides detailed weather information, forecasts, and climate data visualization with an intuitive user interface.
+                        </p>
+                        
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul class="features-list">
+                                <li>Current weather conditions</li>
+                                <li>7-day weather forecast</li>
+                                <li>Interactive weather maps</li>
+                                <li>Location-based weather data</li>
+                                <li>Weather alerts and notifications</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-tech-detailed">
+                            <span class="tech-tag-detailed">React.js</span>
+                            <span class="tech-tag-detailed">Weather API</span>
+                            <span class="tech-tag-detailed">Chart.js</span>
+                            <span class="tech-tag-detailed">CSS3</span>
+                            <span class="tech-tag-detailed">Axios</span>
+                            <span class="tech-tag-detailed">Geolocation</span>
+                        </div>
+                        
+                        <div class="project-status status-completed">
+                            <div class="status-dot"></div>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Interested in Working Together?</h2>
+                <p class="cta-description">
+                    I'm always open to discussing new projects and opportunities. 
+                    Whether you have a specific idea in mind or need help bringing your vision to life, 
+                    let's connect and create something amazing.
+                </p>
+                
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-primary btn-large">
+                        <span>Start a Project</span>
+                        <i class="fas fa-rocket"></i>
+                    </a>
+                    <a href="about.html" class="btn btn-outline btn-large">
+                        <span>Learn More About Me</span>
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Anmol Sharma</h3>
+                    <p>Full Stack Developer passionate about creating exceptional digital experiences that make a meaningful impact.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/anmolanand08" class="social-link" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/anmol-anand-7b1a84256" class="social-link" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/9882793077" class="social-link" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Frontend Design</a></li>
+                        <li><a href="#">Backend Development</a></li>
+                        <li><a href="#">Technical Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> anmolanand8954@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +91 98827 93077</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Punjab, India</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anmol Sharma. All rights reserved.</p>
+                <p>Crafted with <i class="fas fa-heart"></i> and powered by innovation</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.nav-links')?.classList.toggle('active');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Project filtering
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                const projects = document.querySelectorAll('.project-card-detailed');
+                
+                projects.forEach(project => {
+                    if (filterValue === 'all') {
+                        project.style.display = 'block';
+                    } else {
+                        const categories = project.getAttribute('data-category').split(' ');
+                        if (categories.includes(filterValue)) {
+                            project.style.display = 'block';
+                        } else {
+                            project.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+
+        // Page Loader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('pageLoader').classList.add('hidden');
+                document.getElementById('pageContent').style.opacity = '1';
+            }, 1500);
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    </div> <!-- End Page Content -->
+</body>
+</html>

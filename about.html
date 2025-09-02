@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Anmol Sharma</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Additional About Page Styles */
+        .about-hero {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .about-intro {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about-image {
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+        }
+        
+        .about-image-placeholder {
+            font-size: 6rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+        
+        .about-text h1 {
+            margin-bottom: 1rem;
+            font-size: 3rem;
+        }
+        
+        .about-text .highlight {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .journey-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+        }
+        
+        .journey-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-blue);
+        }
+        
+        .journey-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .journey-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .journey-card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        .value-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+            text-align: center;
+            transition: var(--transition-base);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .value-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-blue);
+        }
+        
+        .value-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            transition: var(--transition-base);
+        }
+        
+        .value-item:hover .value-icon {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .value-item h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .value-item p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .about-intro {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .about-image {
+                width: 240px;
+                height: 240px;
+                margin: 0 auto;
+            }
+            
+            .about-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-hero {
+                padding: 6rem 0 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-logo">AS</div>
+            <div class="loader-text">Loading About<span class="loading-dots"></span></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <span class="logo-text">AS</span>
+                    <div class="logo-animation">
+                        <div class="logo-circle"></div>
+                        <div class="logo-pulse"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-content" id="pageContent">
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-intro">
+                <div class="about-image">
+                    <div class="about-image-placeholder">AS</div>
+                </div>
+                
+                <div class="about-text">
+                    <h1>Hi, I'm <span class="highlight">Anmol Sharma</span></h1>
+                    <p style="font-size: 1.25rem; color: var(--text-secondary); line-height: 1.7;">
+                        A passionate Full Stack Developer with 3+ years of experience creating digital solutions 
+                        that make a real impact. I specialize in building modern web applications using cutting-edge 
+                        technologies and best practices.
+                    </p>
+                    <p style="font-size: 1.125rem; color: var(--text-secondary); line-height: 1.7;">
+                        When I'm not coding, you'll find me exploring new technologies, contributing to open source 
+                        projects, or sharing knowledge with the developer community. I believe in continuous learning 
+                        and staying up-to-date with the latest industry trends.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Journey</h2>
+                <p class="section-subtitle">From curious beginner to experienced developer - here's how I got here</p>
+            </div>
+            
+            <div class="journey-grid">
+                <div class="journey-card">
+                    <div class="journey-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education & Learning</h3>
+                    <p>Started my journey with computer science fundamentals and quickly fell in love with web development. Continuously learning new technologies and frameworks to stay current with industry standards.</p>
+                </div>
+                
+                <div class="journey-card">
+                    <div class="journey-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>First Steps in Development</h3>
+                    <p>Began with HTML, CSS, and JavaScript, then expanded into modern frameworks like React and Vue.js. Built my first projects and discovered my passion for creating user-friendly interfaces.</p>
+                </div>
+                
+                <div class="journey-card">
+                    <div class="journey-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Professional Growth</h3>
+                    <p>Transitioned to full-stack development, mastering backend technologies like Node.js and Python. Started working on real-world projects and collaborating with teams to deliver quality solutions.</p>
+                </div>
+                
+                <div class="journey-card">
+                    <div class="journey-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation & Future</h3>
+                    <p>Now focusing on emerging technologies, open source contributions, and building applications that solve real problems. Always looking for new challenges and opportunities to grow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">The technologies and tools I use to bring ideas to life</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Frontend Development</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <div class="skill-tag">React.js</div>
+                        <div class="skill-tag">Vue.js</div>
+                        <div class="skill-tag">TypeScript</div>
+                        <div class="skill-tag">Next.js</div>
+                        <div class="skill-tag">HTML5 & CSS3</div>
+                        <div class="skill-tag">Tailwind CSS</div>
+                        <div class="skill-tag">SASS/SCSS</div>
+                        <div class="skill-tag">Bootstrap</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Backend Development</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <div class="skill-tag">Node.js</div>
+                        <div class="skill-tag">Python</div>
+                        <div class="skill-tag">Express.js</div>
+                        <div class="skill-tag">Django</div>
+                        <div class="skill-tag">PostgreSQL</div>
+                        <div class="skill-tag">MongoDB</div>
+                        <div class="skill-tag">MySQL</div>
+                        <div class="skill-tag">REST APIs</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Tools & Technologies</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <div class="skill-tag">Git & GitHub</div>
+                        <div class="skill-tag">Docker</div>
+                        <div class="skill-tag">AWS</div>
+                        <div class="skill-tag">Figma</div>
+                        <div class="skill-tag">VS Code</div>
+                        <div class="skill-tag">Postman</div>
+                        <div class="skill-tag">Linux</div>
+                        <div class="skill-tag">Webpack</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Drives Me</h2>
+                <p class="section-subtitle">The principles and values that guide my work and approach to development</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h4>User-Centric Design</h4>
+                    <p>Every decision is made with the end user in mind, ensuring intuitive and accessible experiences.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4>Clean Code</h4>
+                    <p>Writing maintainable, readable, and efficient code that stands the test of time.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4>Performance</h4>
+                    <p>Optimizing applications for speed, efficiency, and scalability across all devices.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Collaboration</h4>
+                    <p>Working effectively with teams, sharing knowledge, and learning from others.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h4>Innovation</h4>
+                    <p>Staying curious and exploring new technologies to solve problems creatively.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Quality</h4>
+                    <p>Delivering robust, tested, and reliable solutions that exceed expectations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Timeline</h2>
+                <p class="section-subtitle">Key milestones and achievements in my development career</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h3>Advanced Full Stack Development</h3>
+                        <h4>Freelance & Open Source Contributor</h4>
+                        <p>Focusing on modern frameworks, microservices architecture, and contributing to open source projects. Building innovative web applications for diverse clients while maintaining high code quality standards.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>Full Stack Developer</h3>
+                        <h4>Professional Projects & Team Collaboration</h4>
+                        <p>Developed enterprise-level applications using React, Node.js, and cloud technologies. Led frontend architecture decisions, implemented responsive designs, and collaborated with cross-functional teams.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2022</div>
+                    <div class="timeline-content">
+                        <h3>Web Development Mastery</h3>
+                        <h4>Skill Enhancement & Portfolio Building</h4>
+                        <p>Mastered modern web technologies including React, Vue.js, Node.js, and database management. Built multiple projects to solidify expertise and established a strong foundation in full-stack development.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-content">
+                        <h3>Programming Fundamentals</h3>
+                        <h4>Computer Science & Web Development Basics</h4>
+                        <p>Started with programming fundamentals, learned HTML, CSS, and JavaScript. Built first web projects and discovered passion for creating interactive user interfaces and solving complex problems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Let's Build Something Great</h2>
+                <p class="cta-description">
+                    I'm always interested in new opportunities and challenging projects. 
+                    Whether you have a specific idea in mind or just want to chat about technology, 
+                    I'd love to hear from you.
+                </p>
+                
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-primary btn-large">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                    <a href="projects.html" class="btn btn-outline btn-large">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Anmol Sharma</h3>
+                    <p>Full Stack Developer passionate about creating exceptional digital experiences that make a meaningful impact.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/anmolanand08" class="social-link" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/anmol-anand-7b1a84256" class="social-link" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/9882793077" class="social-link" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Frontend Design</a></li>
+                        <li><a href="#">Backend Development</a></li>
+                        <li><a href="#">Technical Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> anmolanand8954@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +91 98827 93077</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Punjab, India</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anmol Sharma. All rights reserved.</p>
+                <p>Crafted with <i class="fas fa-heart"></i> and powered by innovation</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuToggle && navLinks) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                });
+                
+                // Close menu when clicking on a link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+                        navLinks.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Page Loader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('pageLoader').classList.add('hidden');
+                document.getElementById('pageContent').style.opacity = '1';
+            }, 1500);
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    </div> <!-- End Page Content -->
+</body>
+</html>
