@@ -1,6 +1,6 @@
-# ARQ Portfolio
+# Portfolio
 
-High-performance animated portfolio for Anmol Sharma (brand alias: **ARQ**) featuring:
+High-performance animated portfolio by Anmol Sharma (brand alias: **AS**) featuring:
 
 - Curtain intro, glitch typography & orbiting particles
 - Dynamic role carousel & responsive navigation
@@ -33,4 +33,5 @@ Deploy statically (GitHub Pages / Netlify / Vercel). No build step required.
 - Color contrast targeted for WCAG AA
 
 ## License
-You own your resume data & brand. Code provided under MIT-like permission (personal use, attribution appreciated).
+You own your resume data & brand. Code provided under GNU-like permission (personal use, attribution appreciated).
+
